@@ -37,7 +37,7 @@ class Tshark:
         json_result = self.dissect(pcap_path,True)
 
         if self.fs.exists(filename=json_filename) is False or self.json_check(json_filename, json_result) is False:
-            print "saving "+filename
+            print "saving "+json_filename
             a = self.fs.put(json_result, filename=json_filename) # salva arquivo com nome especifico. "a" eh o _id do registro
 
     def dissect(self, pcap_path, remove_first_layers):
